@@ -10,6 +10,15 @@ lerna-debug.log*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
 report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 
 # Runtime data
