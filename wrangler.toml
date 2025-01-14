@@ -1,5 +1,5 @@
 #:schema node_modules/wrangler/config-schema.json
-name = "quiet-hill-c103"
+name = "bangladesh-language"
 main = "src/index.ts"
 compatibility_date = "2025-01-09"
 
@@ -73,9 +73,9 @@ enabled = true
 
 # Bind a KV Namespace. Use KV as persistent storage for small key-value pairs.
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#kv-namespaces
-# [[kv_namespaces]]
-# binding = "MY_KV_NAMESPACE"
-# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+[[kv_namespaces]]
+binding = "CASHE"
+id = "b87d60fd45a146079a7271268a9145e9"
 
 # Bind an mTLS certificate. Use to present a client certificate when communicating with another service.
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#mtls-certificates
