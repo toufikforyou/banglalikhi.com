@@ -75,7 +75,7 @@ enabled = true
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#kv-namespaces
 [[kv_namespaces]]
 binding = "CASHE"
-id = "b87d60fd45a146079a7271268a9145e9"
+id = "c211cb44dd324f92b4e4a312f0fb6e37"
 
 # Bind an mTLS certificate. Use to present a client certificate when communicating with another service.
 # Docs: https://developers.cloudflare.com/workers/wrangler/configuration/#mtls-certificates
