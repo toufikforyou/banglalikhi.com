@@ -1,7 +1,7 @@
 import { Hono } from 'hono';
 
 type Bindings = {
-	CASHE: KVNamespace;
+	CACHE: KVNamespace;
 };
 
 const app = new Hono<{ Bindings: Bindings }>();
@@ -9,7 +9,7 @@ const app = new Hono<{ Bindings: Bindings }>();
 app.get('/', async (c) => {
 	const username = 'toufikforyou';
 
-	const repsCashe = await c.env.CASHE.get(username, 'json');
+	const repsCashe = await c.env.CACHE.get(username, 'json');
 
 	if (repsCashe) {
 		return c.json(repsCashe);
@@ -22,7 +22,7 @@ app.get('/', async (c) => {
 	});
 
 	const data = await resp.json();
-	await c.env.CASHE.put(username, JSON.stringify(data));
+	await c.env.CACHE.put(username, JSON.stringify(data));
 
 	return c.json(resp);
 });
