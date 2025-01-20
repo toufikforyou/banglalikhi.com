@@ -1,4 +1,6 @@
 import { Hono } from 'hono';
+import { BijoyToUnicode } from './bijoy2unicode';
+import { UnicodeToBijoy } from './unicode2bijoy';
 
 type Bindings = {
 	CACHE: KVNamespace;
@@ -25,6 +27,17 @@ app.get('/', async (c) => {
 	await c.env.CACHE.put(username, JSON.stringify(data));
 
 	return c.json(resp);
+});
+
+app.get('/bijoy2unicode/:text', (c) => {
+	const text = c.req.param('text');
+	const convertedText = BijoyToUnicode(text!);
+	return c.text(convertedText);
+});
+app.get('/unicode2bijoy/:text', (c) => {
+	const text = c.req.param('text');
+	const convertedText = UnicodeToBijoy(text!);
+	return c.text(convertedText);
 });
 
 export default app;
