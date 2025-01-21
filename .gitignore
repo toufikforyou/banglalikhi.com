@@ -11,7 +11,7 @@ lerna-debug.log*
 # Diagnostic reports (https://nodejs.org/api/report.html)
 
 # Default ignored files
-/.idea/*
+/.idea/
 /workspace.xml
 
 report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
