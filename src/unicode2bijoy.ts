@@ -1,41 +1,27 @@
-import banglaAlphabets from './ts/bangladeshi-bangla-alphabets';
-import joinedAlphabets from './ts/bangladeshi-joined-alphabets';
-import numberAlphabets from './ts/bangladeshi-number-alphabets';
-import signAlphabets from './ts/bangladeshi-sign-alphabets';
-import vowelAlphabets from './ts/bangladeshi-vowel-alphabets';
-import vowelSignAlphabets from './ts/bangladeshi-vowel-sign-alphabets';
+import unicodeConverter from './convert/unicode-converter';
+import mappingMap from './push/mapping-map';
 
-function UnicodeToBijoy(text: string): string {
-	const mappings = new Map<string, string>([
-		...banglaAlphabets.map(([k, v]) => [v, k] as [string, string]),
-		...vowelAlphabets.map(([k, v]) => [v, k] as [string, string]),
-		...vowelSignAlphabets.map(([k, v]) => [v, k] as [string, string]),
-		...numberAlphabets.map(([k, v]) => [v, k] as [string, string]),
-		...signAlphabets.map(([k, v]) => [v, k] as [string, string]),
-		...joinedAlphabets.map(([k, v]) => [v, k] as [string, string]),
-	]);
+export default function UnicodeToBijoy(text: string): string {
+	const mappings = new Map([...mappingMap.map(([k, v]) => [v, k] as [string, string])]);
 
-	let convertedText = '';
-	let i = 0;
+	var remappingText = '';
 
-	while (i < text.length) {
-		let char = text[i];
-		let nextChar = text[i + 1] || '';
+	// Bijoy to Unicode remapping
+	for (let i = 0; i < text.length; i++) {
+		const char = text[i];
+		const nextChar = text[i + 1];
 
-		// Handle joined alphabets
-		if (mappings.has(char + nextChar)) {
-			convertedText += mappings.get(char + nextChar);
-			i += 2;
+		if (mappings.has(nextChar)) {
+			remappingText += char + nextChar;
+			i++;
 		} else if (mappings.has(char)) {
-			convertedText += mappings.get(char);
+			remappingText += nextChar;
+			remappingText += char;
 			i++;
 		} else {
-			convertedText += char;
-			i++;
+			remappingText += char;
 		}
 	}
 
-	return convertedText;
+	return unicodeConverter(remappingText);
 }
-
-export { UnicodeToBijoy };
