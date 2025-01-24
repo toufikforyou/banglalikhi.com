@@ -13,8 +13,6 @@ export default function UnicodeToBijoy(text: string): string {
 
 		if (mappings.has(nextChar)) {
 			remappingText += char + nextChar;
-			console.log(mappings.get(nextChar));
-			// console.log(mappings.has(char), char);
 			i++;
 		} else if (mappings.has(char)) {
 			remappingText += nextChar;
