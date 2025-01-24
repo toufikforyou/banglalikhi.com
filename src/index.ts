@@ -1,6 +1,6 @@
 import { Hono } from 'hono';
-import { BijoyToUnicode } from './bijoy2unicode';
-import { UnicodeToBijoy } from './unicode2bijoy';
+import BijoyToUnicode from './bijoy2unicode';
+import UnicodeToBijoy from './unicode2bijoy';
 
 type Bindings = {
 	CACHE: KVNamespace;
