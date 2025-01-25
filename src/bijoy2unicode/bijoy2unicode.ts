@@ -1,5 +1,5 @@
-import bijoyConverter from './convert/bijoy-converter';
-import mappingMap from './push/mapping-map';
+import mappingMap from '../common/mapping/re-arrangement-map';
+import bijoyConverter from '../converters/bijoy-converter';
 
 export default function BijoyToUnicode(text: string): string {
 	const mappings = new Map([...mappingMap.map(([k, v]) => [k, v] as [string, string])]);
