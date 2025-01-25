@@ -1,7 +1,7 @@
 import { Hono } from 'hono';
 import IndexPage from '../public/index';
-import BijoyToUnicode from './bijoy2unicode/bijoy2unicode';
-import UnicodeToBijoy from './unicode2bijoy/unicode2bijoy';
+import BijoyToUnicode from './bijoy2unicode';
+import UnicodeToBijoy from './unicode2bijoy';
 
 type Bindings = {
 	CACHE: KVNamespace;
@@ -24,12 +24,12 @@ app.get('/', async (c) => {
 
 app.get('/bijoy2unicode/:text', (c) => {
 	const text = c.req.param('text');
-	const convertedText = BijoyToUnicode(text!);
+	const convertedText = BijoyToUnicode(text);
 	return c.text(convertedText);
 });
 app.get('/unicode2bijoy/:text', (c) => {
 	const text = c.req.param('text');
-	const convertedText = UnicodeToBijoy(text!);
+	const convertedText = UnicodeToBijoy(text);
 	return c.text(convertedText);
 });
 
