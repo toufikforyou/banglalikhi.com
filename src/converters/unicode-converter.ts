@@ -1,9 +1,9 @@
-import banglaAlphabets from '../ts/bangladeshi-bangla-alphabets';
-import joinedAlphabets from '../ts/bangladeshi-joined-alphabets';
-import numberAlphabets from '../ts/bangladeshi-number-alphabets';
-import signAlphabets from '../ts/bangladeshi-sign-alphabets';
-import vowelAlphabets from '../ts/bangladeshi-vowel-alphabets';
-import vowelSignAlphabets from '../ts/bangladeshi-vowel-sign-alphabets';
+import banglaAlphabets from '../common/bangladeshi-bangla-alphabets';
+import joinedAlphabets from '../common/bangladeshi-joined-alphabets';
+import numberAlphabets from '../common/bangladeshi-number-alphabets';
+import signAlphabets from '../common/bangladeshi-sign-alphabets';
+import vowelAlphabets from '../common/bangladeshi-vowel-alphabets';
+import vowelSignAlphabets from '../common/bangladeshi-vowel-sign-alphabets';
 
 export default function unicodeConverter(text: string): string {
 	const mappings = new Map<string, string>([
