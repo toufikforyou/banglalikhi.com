@@ -1,7 +1,19 @@
 {
-	"name": "bangladesh-language",
+	"name": "@sopnolikhiorg/bangladeshi-language",
 	"version": "1.0.0",
-	"private": true,
+	"description": "Bangladeshi Language",
+	"license": "GNU General Public License v3.0",
+	"keywords": [
+		"bangladeshi",
+		"language",
+		"bangla",
+		"bengali"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/sopnolikhiorg/bangladeshi-language.git"
+	},
+	"author": "MH TOUFIK",
 	"scripts": {
 		"deploy": "wrangler deploy",
 		"dev": "wrangler dev",
