@@ -9,8 +9,17 @@ type Bindings = {
 
 const app = new Hono<{ Bindings: Bindings }>();
 
-app.get('/', (c) => {
-	return c.html(IndexPage());
+app.get('/', async (c) => {
+	const homepage = 'homepage';
+	const cachedHomepage = await c.env.CACHE.get(homepage);
+	if (cachedHomepage) {
+		return c.html(cachedHomepage);
+	}
+
+	const data = IndexPage();
+	await c.env.CACHE.put(homepage, data);
+
+	return c.html(data);
 });
 
 app.get('/bijoy2unicode/:text', (c) => {
