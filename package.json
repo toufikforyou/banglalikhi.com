@@ -38,6 +38,7 @@
 		"hono": "^4.6.16"
 	},
 	"files": [
+		"lib",
 		"README.md",
 		"LICENSE"
 	],
