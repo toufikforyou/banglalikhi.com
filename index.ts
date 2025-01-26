@@ -1,5 +1,5 @@
-import BijoyToUnicode from '../bijoy2unicode';
-import UnicodeToBijoy from '../unicode2bijoy';
+import BijoyToUnicode from './src/bijoy2unicode';
+import UnicodeToBijoy from './src/unicode2bijoy';
 
 const bijoy2unicode = (text: string): string => {
 	return BijoyToUnicode(text);
