@@ -1,8 +1,9 @@
 {
-	"name": "@sopnolikhiorg/bangladeshi-language",
+	"name": "bangladeshi-language",
 	"version": "0.0.0-development",
 	"description": "Bangladeshi Language",
-	"license": "GNU General Public License v3.0",
+	"license": "MIT",
+	"homepage": "https://language.sopnolikhi.org",
 	"keywords": [
 		"Bijoy to Unicode",
 		"Unicode to Bijoy",
@@ -37,7 +38,6 @@
 		"hono": "^4.6.16"
 	},
 	"files": [
-		"dist",
 		"README.md",
 		"LICENSE"
 	],
