@@ -1,20 +1,24 @@
 {
 	"name": "@sopnolikhiorg/bangladeshi-language",
-	"version": "1.0.0",
+	"version": "0.0.0-development",
 	"description": "Bangladeshi Language",
 	"license": "GNU General Public License v3.0",
 	"keywords": [
+		"Bijoy to Unicode",
+		"Unicode to Bijoy",
 		"bangladeshi",
 		"language",
-		"bangla",
-		"bengali"
+		"Unicode",
+		"Bijoy"
 	],
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/sopnolikhiorg/bangladeshi-language.git"
 	},
-	"author": "MH TOUFIK",
+	"author": "MH TOUFIK <hello@toufikhasan.com>",
 	"scripts": {
+		"build": "tsc -p tsconfig.build.json",
+		"semantic-release": "semantic-release",
 		"deploy": "wrangler deploy",
 		"dev": "wrangler dev",
 		"start": "wrangler dev",
@@ -24,11 +28,20 @@
 	"devDependencies": {
 		"@cloudflare/vitest-pool-workers": "^0.5.2",
 		"@cloudflare/workers-types": "^4.20250109.0",
+		"semantic-release": "^24.2.1",
 		"typescript": "^5.5.2",
 		"vitest": "2.1.8",
 		"wrangler": "^3.105.1"
 	},
 	"dependencies": {
 		"hono": "^4.6.16"
+	},
+	"files": [
+		"dist",
+		"README.md",
+		"LICENSE"
+	],
+	"publishConfig": {
+		"access": "public"
 	}
 }
