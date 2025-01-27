@@ -1,9 +1,9 @@
 {
-	"name": "bangladeshi-language",
-	"version": "0.0.0-development",
-	"description": "Bangladeshi Language",
+	"name": "banglalikhi.com",
+	"version": "1.0.0",
+	"description": "This is a bangla unicode-bijoy-unicode converter and bangla typing easy to using bijoy 52 supporting on this banglalikhi.com project.",
 	"license": "MIT",
-	"homepage": "https://language.sopnolikhi.org",
+	"homepage": "https://banglalikhi.com",
 	"keywords": [
 		"Bijoy to Unicode",
 		"Unicode to Bijoy",
@@ -14,12 +14,10 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/sopnolikhiorg/bangladeshi-language.git"
+		"url": "https://github.com/sopnolikhiorg/banglalikhi.com"
 	},
 	"author": "MH TOUFIK <hello@toufikhasan.com>",
 	"scripts": {
-		"build": "tsc -p tsconfig.build.json",
-		"semantic-release": "semantic-release",
 		"deploy": "wrangler deploy",
 		"dev": "wrangler dev",
 		"start": "wrangler dev",
@@ -29,20 +27,11 @@
 	"devDependencies": {
 		"@cloudflare/vitest-pool-workers": "^0.5.2",
 		"@cloudflare/workers-types": "^4.20250109.0",
-		"semantic-release": "^24.2.1",
 		"typescript": "^5.5.2",
 		"vitest": "2.1.8",
 		"wrangler": "^3.105.1"
 	},
 	"dependencies": {
 		"hono": "^4.6.16"
-	},
-	"files": [
-		"lib",
-		"README.md",
-		"LICENSE"
-	],
-	"publishConfig": {
-		"access": "public"
 	}
 }
