@@ -48,7 +48,7 @@ export default function BijoyToUnicode(text: string): string {
 		const char = text[i];
 		const nextChar = text[i + 1];
 
-		if (mappings.has(nextChar)) {
+		if (mappings.has(char + nextChar)) {
 			remappingText += char + nextChar;
 			i++;
 		} else if (mappings.has(char)) {

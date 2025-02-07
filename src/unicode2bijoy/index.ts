@@ -44,13 +44,13 @@ export default function UnicodeToBijoy(text: string): string {
 
 	var remappingText = '';
 
-	// Bijoy to Unicode remapping
+	// Unicode to Bijoy remapping
 	for (let i = 0; i < text.length; i++) {
 		const char = text[i];
 		const nextChar = text[i + 1];
 
 		if (mappings.has(nextChar)) {
-			remappingText += char + nextChar;
+			remappingText += nextChar + char;
 			i++;
 		} else if (mappings.has(char)) {
 			remappingText += nextChar;
