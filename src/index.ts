@@ -22,15 +22,42 @@ app.get('/', async (c) => {
 	return c.html(data);
 });
 
-app.get('/bijoy2unicode/:text', (c) => {
-	const text = c.req.param('text');
-	const convertedText = BijoyToUnicode(text);
-	return c.text(convertedText);
+// POST routes for API
+app.post('/api/unicode', async (c) => {
+	try {
+		const { text } = await c.req.json();
+		const convertedText = BijoyToUnicode(text);
+		return c.json({
+			status: 200,
+			message: "Successfully converted to Unicode",
+			data: convertedText
+		});
+	} catch (error: any) {
+		return c.json({
+			status: 400,
+			message: "Failed to convert text",
+			error: error?.message || "Unknown error"
+		}, 400);
+	}
 });
-app.get('/unicode2bijoy/:text', (c) => {
-	const text = c.req.param('text');
-	const convertedText = UnicodeToBijoy(text);
-	return c.text(convertedText);
+
+// POST route for API
+app.post('/api/bijoy', async (c) => {
+	try {
+		const { text } = await c.req.json();
+		const convertedText = UnicodeToBijoy(text);
+		return c.json({
+			status: 200,
+			message: "Successfully converted to Bijoy",
+			data: convertedText
+		});
+	} catch (error: any) {
+		return c.json({
+			status: 400,
+			message: "Failed to convert text",
+			error: error?.message || "Unknown error"
+		}, 400);
+	}
 });
 
 export default app;
