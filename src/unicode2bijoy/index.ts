@@ -6,6 +6,7 @@ import vowelAlphabets from '../common/bangladeshi-vowel-alphabets';
 import vowelSignAlphabets from '../common/bangladeshi-vowel-sign-alphabets';
 import mappingMap from '../common/mapping/re-arrangement-map';
 
+
 const unicodeConverter = (text: string): string => {
 	const mappings = new Map<string, string>([
 		...banglaAlphabets.map(([k, v]) => [v, k] as [string, string]),
@@ -24,10 +25,7 @@ const unicodeConverter = (text: string): string => {
 		let nextChar = text[i + 1] || '';
 
 		// Handle joined alphabets
-		if (mappings.has(char + nextChar)) {
-			convertedText += mappings.get(char + nextChar);
-			i += 2;
-		} else if (mappings.has(char)) {
+		if (mappings.has(char)) {
 			convertedText += mappings.get(char);
 			i++;
 		} else {
@@ -50,11 +48,13 @@ export default function UnicodeToBijoy(text: string): string {
 		const nextChar = text[i + 1];
 
 		if (mappings.has(nextChar)) {
-			remappingText += nextChar + char;
-			i++;
-		} else if (mappings.has(char)) {
-			remappingText += nextChar;
-			remappingText += char;
+			let charMatch = mappings.get(nextChar);
+
+			if (charMatch && charMatch.length || 0 > 1) {
+				remappingText += charMatch?.charAt(0) + char + charMatch?.charAt(1);
+			} else {
+				remappingText += nextChar + char;
+			}
 			i++;
 		} else {
 			remappingText += char;
