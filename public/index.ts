@@ -102,7 +102,7 @@ export default function IndexPage(): string {
 				<div class="converter-box">
 					<h3>Unicode to Bijoy</h3>
 					<textarea id="unicodeText" placeholder="Enter Unicode text here..."></textarea>
-					<button id="unicodeToBijoy" onclick="convertToBijoy()">Convert to Bijoy</button>
+					<!-- <button id="unicodeToBijoy" onclick="convertToBijoy()">Convert to Bijoy</button> -->
 				</div>
 			</main>
 
